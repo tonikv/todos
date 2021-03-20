@@ -1,19 +1,40 @@
 import PropTypes from 'prop-types';
 
-const Header = (props) => {
+const styleAdd = {
+    backgroundColor: "green"
+}
+
+const styleClose = {
+    backgroundColor: "red"
+}
+
+const Header = ( {name, toggle, newTodo} ) => {
     return (
-        <div id="Header">
-            <h1>{props.name}</h1>
+        <div className="Header">
+            <h1>{name}</h1>
+            {newTodo ? 
+                <button 
+                className="btn" 
+                style = {styleClose}
+                onClick={() => toggle()}
+                >Close</button>
+            : <button 
+                className="btn" 
+                style = {styleAdd}
+                onClick={() => toggle()}
+                >Add</button>
+            }
         </div>
     )
 }
 
 Header.defaultProps = {
-    name: 'Todo'
+    name: 'Task Manager'
 };
 
 Header.propTypes = {
-    name: PropTypes.string
+    name: PropTypes.string,
+    toggle: PropTypes.func
 };
 
 export default Header
