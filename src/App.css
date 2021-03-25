@@ -1,14 +1,33 @@
+/* CSS HEX */
+:root {
+--light-cyan: #cffcffff;
+--magic-mint: #aaefdfff;
+--light-green: #9ee37dff;
+--kelly-green: #63c132ff;
+--india-green: #358600ff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-size: 1em;
+}
+
 
 .container {
-  display:flex;
-  flex-direction: column;
-  justify-content: center;
   width: 60%;
+  min-height: 100%;
   margin-left:auto;
-  margin-right:auto;
-  margin-top: 10px;
+  margin-right: auto;
+  overflow: auto;
+  margin-top: 0.5em;
   padding: 0 1em 0 1em;
-  background-color: rgb(208, 212, 208);
+  border: 1px solid black;
+  border-radius: 0.1em;
 }
 
 .Header {
@@ -19,15 +38,15 @@
 }
 
 .Header h1 {
-  margin-left: 10px;
+  margin-left: 0.1em;
 }
 
 .btn {
-  width:60px;
-  height: 30px;
+  width:4em;
+  height: 2.5em;
   background-color: rgb(29, 182, 24);
   border: none;
-  border-radius: 5px;
+  border-radius: 0.3em;
   color: white;
 }
 
@@ -43,15 +62,28 @@
   font-size:small;
 }
 
-.todoList {
-  border: 2px sandybrown;
+.todoForm {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: max-content;
+  padding-left: 3em;
+  align-content: space-between;
 }
 
-.todo{
-  line-height: 3px;
-  background-color: azure;
+.full-width {
+  width: 100%;
+}
+
+.btn-addTodo {
+  width:4em;
+  height: 2.5em;
+  background-color: rgb(29, 182, 24);
+  border: none;
+  border-radius: 0.3em;
+  color: white;
+  margin-left: 3em;
+}
+
+.todosContainer {
+  min-height: 100%;
+  flex: 1;
+  padding: 0.1em 0 0.1em 1.75em;
 }

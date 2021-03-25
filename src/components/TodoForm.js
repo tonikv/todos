@@ -2,35 +2,31 @@ import { useState } from "react";
 
 const TodoForm = ( {addTodo} ) => {
     const [todoText, setTodoText] = useState("");
-    const [date, setDate] = useState("");
+    const [endTime, setEndTime] = useState("");
 
     const sentTodo = (e) => {
         e.preventDefault();
-        const newTodo= {
-            "id": Math.floor(Math.random() * 9999),
-            "text": todoText,
-            "date": date,
-            "done": false
-        }
-        addTodo(newTodo);
+        addTodo( {endTime, todoText});
     }
 
     return (
         <div className="todoForm">
             <form onSubmit={sentTodo}>
                 <input 
+                    className="full-width"
                     type="text"
                     placeholder="new task"
                     required={true}
                     onChange={e => setTodoText(e.target.value)}>
                 </input>
                 <input 
-                    type="text"
-                    placeholder="set date"
+                    className="full-width"
+                    type="date"
+                    placeholder="time to complete"
                     required={true}
-                    onChange={e => setDate(e.target.value)}>
-                </input> 
-                <button className="btn" type="submit">Add</button>
+                    onChange={e => setEndTime(e.target.value)}>
+                </input>
+                <button className="btn-addTodo" type="submit">Add</button>
             </form>
         </div>
     )
